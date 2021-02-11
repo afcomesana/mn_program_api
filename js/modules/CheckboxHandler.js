@@ -7,7 +7,9 @@ import CheckOrigin from './CheckOrigin.js';
 
 class CheckboxHandler {
     constructor() {
-        this.consentCheckbox = document.querySelector('#form-field-sdi_acceptance');
+        this.checkOrigin = new CheckOrigin();
+        this.formIdPrefix = this.checkOrigin.isInscription ? 'ins' : 'sdi';
+        this.consentCheckbox = document.querySelector(`#form-field-${this.formIdPrefix}_acceptance`);
         this.consent = this.consentCheckbox ? this.consentCheckbox.checked : false;
         this.areaCheckbox = [];
         this.centroCheckbox = [];
@@ -15,53 +17,53 @@ class CheckboxHandler {
         this.requestLabel = false;
         this.areaFields = [
             {
-                id: 'form-field-sdi_area-0',
+                id: `form-field-${this.formIdPrefix}_area-0`,
                 label: 'Educación'
             },
             {
-                id: 'form-field-sdi_area-1',
+                id: `form-field-${this.formIdPrefix}_area-1`,
                 label:'Salud'
             },
             {
-                id: 'form-field-sdi_area-2',
+                id: `form-field-${this.formIdPrefix}_area-2`,
                 label:'Social'
             },
             {
-                id: 'form-field-sdi_area-3',
+                id: `form-field-${this.formIdPrefix}_area-3`,
                 label:'Otros'
             }
         ];
         this.centroFields = [
             {
-                id: 'form-field-sdi_centro-0',
+                id: `form-field-${this.formIdPrefix}_centro-0`,
                 label: 'Madrid'
             },
             {
-                id: 'form-field-sdi_centro-1',
+                id: `form-field-${this.formIdPrefix}_centro-1`,
                 label: 'Burgos'
             },
             {
-                id: 'form-field-sdi_centro-2',
+                id: `form-field-${this.formIdPrefix}_centro-2`,
                 label: 'Palma de Mallorca'
             },
             {
-                id: 'form-field-sdi_centro-3',
+                id: `form-field-${this.formIdPrefix}_centro-3`,
                 label: 'Ibiza'
             },
             {
-                id: 'form-field-sdi_centro-4',
+                id: `form-field-${this.formIdPrefix}_centro-4`,
                 label: 'Canarias'
             },
             {
-                id: 'form-field-sdi_centro-5',
+                id: `form-field-${this.formIdPrefix}_centro-5`,
                 label: 'Bilbao'
             },
             {
-                id: 'form-field-sdi_centro-6',
+                id: `form-field-${this.formIdPrefix}_centro-6`,
                 label: 'Chile'
             },
             {
-                id: 'form-field-sdi_centro-7',
+                id: `form-field-${this.formIdPrefix}_centro-7`,
                 label: 'Otros'
             }
         ];

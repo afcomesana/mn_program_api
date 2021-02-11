@@ -84,7 +84,6 @@ class CheckOrigin {
     // adaptar formulario de solicitud a la pagina en la que se encuentra
     // el usuario
     handleDataLocation = () => {
-        console.log('executing handleLocation...');
         switch (this.location) {
             case 'formacion':
                 if (this.barUrl.length > 5) {
