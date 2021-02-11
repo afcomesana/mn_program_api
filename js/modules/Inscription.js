@@ -1,0 +1,7 @@
+class Inscription {
+    constructor() {
+        // code
+    }
+
+
+}
