@@ -34,13 +34,13 @@ $domicilio = ($_POST["domicilio"]) ? $_POST["domicilio"] : "Undefined";
 $descripcionOportunidad = $_POST['submit_type'];
 $notasOportunidad = "Area de interes: $area\nFormacion de interes: $formacion\nTitulacion: $nivelEstudios\nPais: $pais \nCentro mas cercano: $centro \nDomicilio de usuario: $domicilio \nComentario en la solicitud: $comentario";
 $operador = "Supervisor";
-$token = "c43dd93c-9350-4c27-bdf7-119138da8a65";
+$token = "***************";
 $numCurso = ($_POST["id_curso"]) ? $_POST["id_curso"] : "Not found";
 $anhoCurso = date("Y");
 $numEmpresa = 2;
-$instancia = "7843_";
+$instancia = "****_";
 // URL de la API de mn program
-$url = "https://cloud-s5.mnprogram.net:444/web/API/ClientesService.asmx?op=CrearOportunidad";
+$url = "https://client-url/API/ClientesService.asmx?op=CrearOportunidad";
 
 // SOAP a la api de mn program
 $xmlSoap = "<?xml version='1.0' encoding='utf-8'?>
