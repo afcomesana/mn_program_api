@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let checkboxHandler = new CheckboxHandler();
     
     checkOrigin.handleDOMLocation();
-    document.querySelector('input[type="submit"]').addEventListener('click', e => {
+    document.querySelector('button[type="submit"]').addEventListener('click', e => {
         e.preventDefault();
         if (checkboxHandler.consent) {
             let formSender = new FormSender();

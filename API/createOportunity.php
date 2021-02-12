@@ -1,6 +1,8 @@
 <?php
 // Datos del cliente
 $nombreCli = ($_POST["name"]) ? $_POST["name"] : "Undefined";
+$apellidosCli = ($_POST["lastname"]) ? $_POST["lastname"] : "Undefined";
+$nombreCli = $nombreCli . ' ' . $apellidosCli;
 $nifCli = ($_POST["nif"]) ? $_POST["nif"] : "";
 $telfCli = ($_POST["phone"]) ? $_POST["phone"] : "";
 $mailCli = ($_POST["email"]) ? $_POST["email"] : "";
@@ -29,8 +31,8 @@ $datosCliente = array(
 $datosCliente = json_encode($datosCliente);
 // Otros datos del XML
 $domicilio = ($_POST["domicilio"]) ? $_POST["domicilio"] : "Undefined";
-$descripcionOportunidad = "SOLICITUD DE INFORMACION \nArea de interes: $area";
-$notasOportunidad = "Formacion de interes: $formacion\nPais: $pais \nCentro mas cercano: $centro \nDomicilio de usuario: $domicilio \nComentario en la solicitud: $comentario";
+$descripcionOportunidad = $_POST['submit_type'];
+$notasOportunidad = "Area de interes: $area\nFormacion de interes: $formacion\nTitulacion: $nivelEstudios\nPais: $pais \nCentro mas cercano: $centro \nDomicilio de usuario: $domicilio \nComentario en la solicitud: $comentario";
 $operador = "Supervisor";
 $token = "c43dd93c-9350-4c27-bdf7-119138da8a65";
 $numCurso = ($_POST["id_curso"]) ? $_POST["id_curso"] : "Not found";

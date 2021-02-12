@@ -6,10 +6,11 @@ class FormSender {
         this.checkboxHandler = new CheckboxHandler();
         this.checkOrigin = new CheckOrigin();
         this.formIdPrefix = this.checkOrigin.isInscription ? 'ins' : 'sdi';
+        this.submitType = this.checkOrigin.isInscription ? 'INSCRIPCION' : 'SOLICITUD DE INFORMACION';
         this.checkOrigin.handleDataLocation();
         this.host_url = window.location.href.substring(0, window.location.href.indexOf(".com/") + 5);
         this.plugin_url = this.host_url + "wp-content/plugins/mn_program_psicopraxis/API/";
-        this.phpSendFile = '../API/createOportunity.php'; // acordarse de cambiar esto
+        this.phpSendFile = this.plugin_url + 'createOportunity.php';
         this.userData = [
             {   
                 label: "name",
@@ -54,6 +55,11 @@ class FormSender {
             {
                 label: "comments",
                 data: document.querySelector(`#form-field-${this.formIdPrefix}_comment`).value.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
+                required: false
+            },
+            {
+                label: "submit_type",
+                data: this.submitType,
                 required: false
             }
         ];
@@ -128,7 +134,7 @@ class FormSender {
         this.inscriptionFields.forEach(field => {
             this.userData.push({
                 label: field.label,
-                data: field.data,
+                data: document.querySelector(field.data).value.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
                 required: field.required
             });
         });

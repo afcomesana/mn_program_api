@@ -100,7 +100,7 @@ class CheckOrigin {
         switch (this.location) {
             case 'formacion':
                 if (this.barUrl.length > 5) {
-                    document.querySelector('#form-field-sdi_formacion').parentNode.remove();
+                    document.querySelector('#form-field-sdi_formacion').parentNode.parentNode.remove();
                 }
                 break;
             case 'centro':
